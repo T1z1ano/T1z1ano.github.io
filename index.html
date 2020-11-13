@@ -27,14 +27,15 @@
 		} 
 	);
 	
-	function updateDate(dataRow){
+	function updateDate(date){
 		$('#date').text('DATE UPDATE: '+ date);
 	}
 	
 	function createDataset(dataRow){
 		var arrayAll = dataRow.split(",");
 		updateDate(arrayAll[0]);
-		arrayAll = arrayAll.splice(0, 1);
+		arrayAll.splice(0, 1);
+		console.log(arrayAll);
 		var outerArray = [];
 		var arrayLength = arrayAll.length;
 		var innerArray = [];
