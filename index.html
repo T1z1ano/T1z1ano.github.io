@@ -50,7 +50,10 @@
 	function initiDatatable(dataset){
 		$('#table_id').DataTable( {
 			data: dataset,
-			lengthMenu: ["All"],
+			 lengthMenu: [
+				[ 100,-1 ],
+				[ '100 rows', 'Show all' ]
+			],
 			columns: [
 				{ title: "NAME" },
 				{ title: "CLASS" },
