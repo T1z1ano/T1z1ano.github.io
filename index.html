@@ -34,12 +34,10 @@
 		var arrayAll = dataRow.split(",");
 		updateDate(arrayAll[0]);
 		arrayAll.splice(0, 1);
-		console.log(arrayAll);
 		var outerArray = [];
 		var arrayLength = arrayAll.length;
 		var innerArray = [];
 		for (var i = 0; i < arrayLength; i++) {
-			console.log(arrayAll[i]);
 			innerArray.push(arrayAll[i]);
 			if((i+1)%6 === 0){
 				outerArray.push(innerArray);
@@ -64,7 +62,6 @@
 	}
 	</script>
 </head>
-
 <body>
 
 	<h2>EXODUS EPGP LIST</h2>
