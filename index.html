@@ -21,10 +21,39 @@
 				dataType: "text",
 				success: function(cssText) {
 					console.log(cssText);
+					 $('#table_id').DataTable( {
+						data: createDataset(cssText),
+						columns: [
+							{ title: "Col 1" },
+							{ title: "Col 2" },
+							{ title: "Col 3" },
+							{ title: "Col 4" },
+							{ title: "Col 5" },
+							{ title: "Col 6" }
+						]
+					} );
 				}
 			});
+			
+			
 		} 
 	);
+	
+	createDataset(csv){
+		var arrayAll = csv.split(",");
+		var outerArray = [];
+		var arrayLength = arrayAll.length;
+		var innerArray = [];
+		for (var i = 0; i < arrayLength; i++) {
+			console.log(arrayAll[i]);
+			innerArray.push(arrayAll[i]);
+			if((i+1)%6 === 0){
+				outerArray.push(innerArray);
+				innerArray = [];
+			}
+		}
+		return outerArray;
+	}
 	</script>
 </head>
 
