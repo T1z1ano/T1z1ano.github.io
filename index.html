@@ -16,7 +16,7 @@
 	$(document).ready( 
 		function () {
 			$.ajax({
-				url: "/data/test.csv",
+				url: "/data/dataraw.csv",
 				dataType: "text",
 				success: function(cssText) {
 					var dataset = createDataset(cssText.trim());
@@ -27,12 +27,22 @@
 		} 
 	);
 	
-	function createDataset(csv){
+	function updateDate(dataRow)}{
+		$('#date').text('DATE UPDATE: '+ date);
+	}
+	
+	function splitInArray(){
+	
+	}
+	
+	function createDataset(dataRow){
 		var arrayAll = csv.split(",");
+		updateDate(arrayAll[0]);
+		arrayAll = arrayAll.splice(0, 1);
 		var outerArray = [];
 		var arrayLength = arrayAll.length;
 		var innerArray = [];
-		for (var i = 0; i < arrayLength; i++) {
+		for (var i = 1; i < arrayLength; i++) {
 			console.log(arrayAll[i]);
 			innerArray.push(arrayAll[i]);
 			if((i+1)%6 === 0){
@@ -47,9 +57,9 @@
 		$('#table_id').DataTable( {
 			data: dataset,
 			columns: [
-				{ title: "NOME" },
-				{ title: "CLASSE" },
-				{ title: "TANK" },
+				{ title: "NAME" },
+				{ title: "CLASS" },
+				{ title: "RANK" },
 				{ title: "EP" },
 				{ title: "GP" },
 				{ title: "PR" }
@@ -61,6 +71,8 @@
 
 <body>
 
+	<h2>EXODUS EPGP LIST</h2>
+	<h3 id="date">DATE UPDATE: </h3>
 	<table id="table_id" class="display">
 	</table>
 
