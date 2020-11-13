@@ -19,6 +19,7 @@
 		function () {
 			$.ajax({
 				url: "/data/dataraw.csv",
+				//data: mockDataraw(),
 				dataType: "text",
 				success: function(cssText) {
 					var dataset = createDataset(cssText.trim());
@@ -27,6 +28,14 @@
 			});
 		} 
 	);
+	
+	function mockDataraw(){
+		var outerArray = [];
+		var innerArray1 = ["Aadavan","Shaman","Centurion","284","1","284"];
+		var innerArray2 = ["Tizzi","Shaman","Centurion","290","3","100"];
+		outerArray.push(innerArray1,innerArray2);
+		return outerArray;
+	}
 	
 	function updateDate(date){
 		$('#date').text('DATE UPDATE: '+ date);
@@ -72,8 +81,10 @@
 
 	<h2>EXODUS EPGP LIST</h2>
 	<h3 id="date">DATE UPDATE: </h3>
-	<table id="table_id" class="display">
-	</table>
+	<div class="container">
+		<table id="table_id" class="display">
+		</table>
+	</div>
 
 </body>
 </html>
