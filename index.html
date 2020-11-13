@@ -21,8 +21,11 @@
 				dataType: "text",
 				success: function(cssText) {
 					console.log(cssText);
+					
+					var dataset = createDataset(cssText);
+					console.log(dataset);
 					 $('#table_id').DataTable( {
-						data: createDataset(cssText),
+						data: dataset,
 						columns: [
 							{ title: "Col 1" },
 							{ title: "Col 2" },
