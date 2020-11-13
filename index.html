@@ -54,9 +54,10 @@
 		$('#table_id').DataTable( {
 			data: dataset,
 			 lengthMenu: [
-				[ 100,-1 ],
-				[ '100 rows', 'Show all' ]
+				[ -1 ],
+				[ 'Show all' ]
 			],
+			paging:   false,
 			columns: [
 				{ title: "NAME" },
 				{ title: "CLASS" },
