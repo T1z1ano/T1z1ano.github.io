@@ -23,6 +23,7 @@
 					
 					var dataset = createDataset(cssText);
 					console.log(dataset);
+					initiDatatable(dataset);
 					
 				}
 			});
@@ -48,18 +49,17 @@
 	}
 	
 	function initiDatatable(dataset){
-		
-		/*$('#table_id').DataTable( {
+		$('#table_id').DataTable( {
 			data: dataset,
-				columns: [
-					{ title: "Col 1" },
-					{ title: "Col 2" },
-					{ title: "Col 3" },
-					{ title: "Col 4" },
-					{ title: "Col 5" },
-					{ title: "Col 6" }
-				]
-			} );*/
+			columns: [
+				{ title: "Col 1" },
+				{ title: "Col 2" },
+				{ title: "Col 3" },
+				{ title: "Col 4" },
+				{ title: "Col 5" },
+				{ title: "Col 6" }
+			]
+		} );
 	}
 	</script>
 </head>
