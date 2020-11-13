@@ -20,7 +20,6 @@
 		function () {
 			$.ajax({
 				url: "/data/dataraw.csv",
-				//data: mockDataraw(),
 				dataType: "text",
 				success: function(cssText) {
 					var dataset = createDataset(cssText.trim());
@@ -29,15 +28,7 @@
 			});
 		} 
 	);
-	
-	function mockDataraw(){
-		var outerArray = [];
-		var innerArray1 = ["Aadavan","Shaman","Centurion","284","1","284"];
-		var innerArray2 = ["Tizzi","Shaman","Centurion","290","3","100"];
-		outerArray.push(innerArray1,innerArray2);
-		return outerArray;
-	}
-	
+
 	function updateDate(date){
 		$('#date').text('DATE UPDATE: '+ date);
 	}
@@ -79,7 +70,7 @@
 	</script>
 </head>
 <body>
-	<div class="title">
+	<div class="title block-shadow">
 		<h2>EXODUS EPGP LIST</h2>
 		<h4 id="date">DATE UPDATE: </h3>
 	</div>
