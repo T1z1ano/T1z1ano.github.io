@@ -20,7 +20,6 @@
 				dataType: "text",
 				success: function(cssText) {
 					var dataset = createDataset(cssText.trim());
-					console.log(dataset);
 					initiDatatable(dataset);
 				}
 			});
@@ -39,7 +38,7 @@
 		var outerArray = [];
 		var arrayLength = arrayAll.length;
 		var innerArray = [];
-		for (var i = 1; i < arrayLength; i++) {
+		for (var i = 0; i < arrayLength; i++) {
 			console.log(arrayAll[i]);
 			innerArray.push(arrayAll[i]);
 			if((i+1)%6 === 0){
